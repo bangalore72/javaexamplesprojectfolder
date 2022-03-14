@@ -1,10 +1,10 @@
-package com.infy.batch2022.abhishekmalhotra.interfacetest;
+package com.infy.batch2022.abhishekmalhotra.thread;
 
 public class MainThreadExample implements Runnable {
 
+
 	static int bankBalance = 0;
-	static private Object lock1 = new Object();
-	
+	 
 	public static void main(String[] args) {
 
 		
@@ -18,7 +18,7 @@ public class MainThreadExample implements Runnable {
 		
 		try {
 			
-			for(int i = 0 ; i < 10000 ; i++)
+			for(int i = 0 ; i < 100 ; i++)
 			{
 				//System.out.println("Main Thread : " + " " + i);
 				
@@ -38,7 +38,7 @@ public class MainThreadExample implements Runnable {
 	
 	public static void increment()
 	{
-		//synchronized(lock1)
+		 
 		{
 			bankBalance++;
 		}
@@ -47,7 +47,7 @@ public class MainThreadExample implements Runnable {
 
 	public static void decrement()
 	{
-		//synchronized(lock1)
+	 
 		{
 			bankBalance--;
 		}
@@ -57,10 +57,18 @@ public class MainThreadExample implements Runnable {
 	
 	public void run() {
 		System.out.println("This code is running in a thread");
-		try {
-			for(int i = 0 ; i < 10000 ; i++)
+		try
+		{
+			for(int i = 0 ; i < 100 ; i++)
 			{
-				//System.out.println("child Thread : " + " " + i);
+				System.out.println("child Thread : " + " " + i);
+				
+				if( i == 5)
+				{
+					Thread.currentThread().stop();
+					
+				}
+				
 				
 				decrement();
 				
