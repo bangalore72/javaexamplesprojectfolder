@@ -3,7 +3,7 @@ package com.infy.batch2022.abhishekmalhotra.streams;
 import java.util.Arrays;
 import java.util.List;
 import java.time.LocalDateTime;
-
+import java.util.stream.BaseStream;
 import java.util.stream.Collectors;
 
 class Transaction {
@@ -54,6 +54,9 @@ public class TransactionProcessingUsingStreams {
 		}).forEach(id -> System.out.println(id));
 
 	}
+	
+	BaseStream s ;
+	
 
 	/*
 	 * 

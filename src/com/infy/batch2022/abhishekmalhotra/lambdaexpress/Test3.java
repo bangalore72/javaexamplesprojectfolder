@@ -1,6 +1,6 @@
 package com.infy.batch2022.abhishekmalhotra.lambdaexpress;
 
-import com.infy.batch2022.abhishekmalhotra.lambdaexpress.Test.FuncInter1;
+import com.infy.batch2022.abhishekmalhotra.lambdaexpress.TestFunctionalInterface.FuncInter1;
 
 interface FuncInterExample2
 {

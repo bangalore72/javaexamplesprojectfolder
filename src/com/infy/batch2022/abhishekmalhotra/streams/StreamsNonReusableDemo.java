@@ -21,6 +21,8 @@ class StreamsNonReusableDemo {
 		tempList.stream().filter(name -> name.charAt(0)=='C')
         .sorted()                                   
         .forEach(name -> System.out.println(name));
+		
+		
 		/*
 		
 		//Stream Operation #1

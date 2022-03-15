@@ -2,7 +2,7 @@ package com.infy.batch2022.abhishekmalhotra.lambdaexpress;
 
  
 //Java program to demonstrate working of lambda expressions
-public class Test
+public class TestFunctionalInterface
 {
 	// operation is implemented using lambda expressions
 	interface FuncInter1
@@ -45,7 +45,7 @@ public class Test
 
 		// Creating an object of Test to call operate using
 		// different implementations using lambda Expressions
-		Test tobj = new Test();
+		TestFunctionalInterface tobj = new TestFunctionalInterface();
 
 		// Add two numbers using lambda expression
 		System.out.println("Addition is " +
