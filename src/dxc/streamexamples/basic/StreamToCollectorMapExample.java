@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-
 class Book {
 	
 	private String name;
@@ -44,7 +43,7 @@ class Book {
 }
 
 
-public class CollectorMapExample {
+public class StreamToCollectorMapExample {
 	
 	public static void main(String []args)
 	{
@@ -54,7 +53,8 @@ public class CollectorMapExample {
 		bookList.add(new Book("The Return of the King", 1955, "0618129111"));
 
 		Map<String, String> map 
-			= bookList.stream().collect(Collectors.toMap(Book::getIsbn, Book::getName));
+			= bookList.stream().
+				collect(Collectors.toMap(Book::getIsbn, Book::getName));
 		
 		
 		System.out.println(" " + map);
@@ -67,7 +67,31 @@ public class CollectorMapExample {
 			String  name = entry.getValue();
 			System.out.println( isbn +" : "+ name);
 		}
-	 
+		
+		
+		///
+
+		String[][] twoArrayData = 
+				new String[][] 
+						{ { "A", "Apple" }, { "B", "Boy" }, { "C", "Cat" } };
+						
+		
+		Stream<String[]> myStream = Stream.of(twoArrayData);
+		
+		
+		Map<String , String> resultMap = 
+				myStream.collect( Collectors.toMap( p -> p[0], p -> p[1]) );
+		
+
+		for (Entry<String, String> entry : resultMap.entrySet()) 
+		{
+			String k  = entry.getKey();
+			String  v = entry.getValue();
+			System.out.println( k +" : "+ v);
+		}
+		
+						
+
 	}
 
 }
